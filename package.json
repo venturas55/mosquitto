@@ -1,0 +1,1 @@
+{"name":"mqtt2mysql","version":"1.0.0","description":"Un pequeño proyecto mqtt2mysql","main":"index.js","type":"module","dependencies":{"dotenv":"^16.3.1","ejs":"^3.1.10","express":"^5.2.1","mqtt":"^5.14.1","mysql2":"^3.15.3"}}

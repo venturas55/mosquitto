@@ -1,0 +1,5 @@
+node_modules
+.venv
+.env
+MQTT/MQTT.ino
+python/mqtt.py
