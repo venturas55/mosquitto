@@ -495,8 +495,8 @@
         // =========================
         // MQTT
         // =========================
-        const MQTT_IP = <% - JSON.stringify(serverIP) %>;
-        const MQTT_NAME = <% - JSON.stringify(serverName) %>;
+        const MQTT_IP = <%- JSON.stringify(serverIP) %>;
+        const MQTT_NAME = <%- JSON.stringify(serverName) %>;
         const MQTT_WEBSOCKET_PORT = <%= mqttPort %>;
         console.log("Broker MQTT:", MQTT_NAME, MQTT_WEBSOCKET_PORT);
         //const client = new Paho.Client(MQTT_NAME, MQTT_WEBSOCKET_PORT, "clienteWeb");
