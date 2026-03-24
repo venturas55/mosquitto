@@ -76,6 +76,7 @@ client.on("message", (topic, message) => {
 // -------------------
 
 app.get("/", (req, res) => {
+  console.log(HOST_MQTT_IP,HOST_MQTT_NAME,HOST_MQTT_WEBSOCKET_PORT)
   res.render("index", {
     serverIP: HOST_MQTT_IP,
     serverName: HOST_MQTT_NAME,
