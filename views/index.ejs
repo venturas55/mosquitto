@@ -107,7 +107,6 @@
             try {
                 const res = await fetch(`/api/${endpoint}`);
                 if (!res.ok) throw new Error(`Error al obtener ${endpoint}: ${res.status}`);
-                console.log(res.json())
                 return await res.json();
             } catch (error) {
                 console.error(error);
