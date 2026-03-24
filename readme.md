@@ -82,8 +82,8 @@ void loop() {
   delay(5000); // enviar cada 5 segundos
 }
 
-
 ==============================================================
+
 #2.- MQTT:
 
 Se instala con:
@@ -125,6 +125,7 @@ Se configura MQTT CON: sudo nano /etc/mosquitto/mosquitto.conf
 
 
 ================================================================
+
 #3.- La base de datos se ha creado una db: MQTT:
 donde hay una tabla "temperaturas":
       CREATE TABLE temperaturas (
@@ -151,6 +152,7 @@ Y ya esta vertiendo datos en la base de datos. Necesitaras un .env
 
 
 ===================================================================
+
 #5.- Falta la web de visionado: (YA INCLUIDA EN la app nodejs ) mqtt2mysql.js con plantilla ejs
 Plantilla dentro de "views"
 
@@ -158,5 +160,6 @@ Plantilla dentro de "views"
 
 
 ====================================================================
+
 El proyecto viene de : 
 https://github.com/venturas55/mosquitto.git
