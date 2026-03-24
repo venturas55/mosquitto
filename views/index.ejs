@@ -88,7 +88,7 @@
             <button id="btnApagar">Apagar</button>
         </div>
         <div>
-              <span>Salida 2</span>
+            <span>Salida 2</span>
             <button id="btnEncender2">Encender</button>
             <button id="btnApagar2">Apagar</button>
         </div>
@@ -212,6 +212,11 @@
                 }
             }
         }
+
+        function valor_con_signo(valor) {
+            return (Math.sign(valor) >= 0 ? "+" : "") + valor;
+        }
+
         function analizarDatos2() {
             var inputFechaInicio = new Date(document.getElementById("inputFechaInicio").value + ":00Z");
             var inputTempInicio = document.getElementById("inputTempInicio").value;
@@ -279,8 +284,8 @@
                 console.log("tiempoS: " + tiempoS);
                 console.log("tecta: " + tecta + "  dseta: " + dseta);
                 const K = (valorFinal / filtrados[0].lectura).toFixed(2);
-                const formula = `G(s)=\\frac{${(K * omegaN ** 2).toFixed(2)}}{s^2 + ${(2 * dseta * omegaN).toFixed(2)}\\,s + ${(omegaN ** 2).toFixed(3)}}`;
-
+                //const formula = `G(s)=\\frac{${(K * omegaN ** 2).toFixed(2)}}{s^2 + ${(2 * dseta * omegaN).toFixed(2)}\\,s + ${(omegaN ** 2).toFixed(3)}}`;
+                const formula = `G(s)=\\frac{${(K * omegaN ** 2).toFixed(2)}}{s^2 ${valor_con_signo((2 * dseta * omegaN).toFixed(2))}\\,s ${valor_con_signo((omegaN ** 2).toFixed(3))}}`;
                 katex.render(formula, document.getElementById("formula"));
             }
 
@@ -489,8 +494,8 @@
         // =========================
         // MQTT
         // =========================
-        const MQTT_IP = <%- JSON.stringify(serverIP) %>;
-        const MQTT_NAME = <%- JSON.stringify(serverName) %>;
+        const MQTT_IP = <% - JSON.stringify(serverIP) %>;
+        const MQTT_NAME = <% - JSON.stringify(serverName) %>;
         const MQTT_WEBSOCKET_PORT = <%= mqttPort %>;
         console.log("Broker MQTT:", MQTT_NAME, MQTT_WEBSOCKET_PORT);
         //const client = new Paho.Client(MQTT_NAME, MQTT_WEBSOCKET_PORT, "clienteWeb");
