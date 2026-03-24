@@ -12,6 +12,7 @@
         "mysql2": "^3.15.3"
     },
     "scripts": {
-        "start": "node mqtt2mysql.js"
+        "start": "node mqtt2mysql.js",
+        "dev": "nodemon mqtt2mysql.js"
     }
 }
