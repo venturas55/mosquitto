@@ -84,8 +84,8 @@
     <div class="card">
         <div>
             <span>Salida 1</span>
-            <button id="btnEncender">Encender</button>
-            <button id="btnApagar">Apagar</button>
+            <button id="btnEncender1">Encender</button>
+            <button id="btnApagar1">Apagar</button>
         </div>
         <div>
             <span>Salida 2</span>
@@ -506,12 +506,12 @@
             useSSL: true,
             onSuccess: () => {
                 console.log("Conectado WebSocket");
-                document.getElementById("btn1Encender").addEventListener("click", () => {
+                document.getElementById("btnEncender1").addEventListener("click", () => {
                     client.send("wemos/salida1", "ON");
                     console.log("Enviando encendido 1");
 
                 });
-                document.getElementById("btn1Apagar").addEventListener("click", () => {
+                document.getElementById("btnApagar1").addEventListener("click", () => {
                     client.send("wemos/salida1", "OFF");
                     console.log("Enviando apagado 1");
                 });

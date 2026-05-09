@@ -156,10 +156,15 @@ Y ya esta vertiendo datos en la base de datos. Necesitaras un .env
 #5.- Falta la web de visionado: (YA INCLUIDA EN la app nodejs ) mqtt2mysql.js con plantilla ejs
 Plantilla dentro de "views"
 
-
-
-
 ====================================================================
+## Ver tráfico MQTT REAL
+Con:
+mosquitto_sub -h localhost -t "#" -v
 
+
+
+
+
+=================================================
 El proyecto viene de : 
 https://github.com/venturas55/mosquitto.git

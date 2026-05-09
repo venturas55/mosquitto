@@ -4,14 +4,14 @@
 #include <DallasTemperature.h>
 
 // WiFi
-const char *ssid = "SSID_WIFI_2_CONNECT";
-const char *password = "PASSWORD_OF_WIFI_TO_CONNECT";
+const char* ssid = "iPhone-H4YJ1BKB0F0X";
+const char* password = "1234567890";
 // MQTT
-const char *mqtt_server = "MQTT SERVER IP"; // IP del broker Mosquitto
+const char *mqtt_server = "152.228.133.198"; // IP del broker Mosquitto
 const int mqtt_port = 1883;
 const char *mqtt_topic = "sensores/temperatura";
 const int pinSalida = 5; // ES EL 5? DEL WEMOS LOLIN D1 MINI V4.0
-const int pinSalida = 0; // ES EL 0? DEL WEMOS LOLIN D1 MINI V4.0
+const int pinSalida2 = 0; // ES EL 0? DEL WEMOS LOLIN D1 MINI V4.0
 
 // DS18B20
 #define ONE_WIRE_BUS 2 // ES EL 2 DEL WEMOS LOLIN D1 MINI V4.0
