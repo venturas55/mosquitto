@@ -48,6 +48,7 @@ void reconnect()
     {
       Serial.println(" conectado.");
       client.subscribe("wemos/salida1");
+      client.subscribe("wemos/salida2");
     }
     else
     {
@@ -109,26 +110,30 @@ void callback(char *topic, byte *payload, unsigned int length)
   }
 }
 
+
+unsigned long lastSend = 0;
 void loop()
 {
-  if (!client.connected())
-  {
-    reconnect();
-  }
-  client.loop();
+    if (!client.connected())
+        reconnect();
 
-  sensors.requestTemperatures();
-  float temp = sensors.getTempCByIndex(0);
+    client.loop();
 
-  // Crear payload JSON
-  String payload = "{\"temperatura\": ";
-  payload += temp;
-  payload += ", \"timestamp\": ";
-  payload += millis();
-  payload += "}";
+    if (millis() - lastSend > 5000)
+    {
+        lastSend = millis();
 
-  client.publish(mqtt_topic, payload.c_str());
-  Serial.println("Enviado: " + payload);
+        sensors.requestTemperatures();
+        float temp = sensors.getTempCByIndex(0);
 
-  delay(5000); // enviar cada 5 segundos
+        String payload = "{\"temperatura\": ";
+        payload += temp;
+        payload += ", \"timestamp\": ";
+        payload += millis();
+        payload += "}";
+
+        client.publish(mqtt_topic, payload.c_str());
+
+        Serial.println("Enviado: " + payload);
+    }
 }
