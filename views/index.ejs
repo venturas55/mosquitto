@@ -501,9 +501,10 @@
         //const client = new Paho.Client(MQTT_NAME, MQTT_WEBSOCKET_PORT, "clienteWeb");
         //const client = new Paho.Client("mqtt.guardiandelfaro.es", 9001, "/mqtt", "clienteWeb")
         //var client = new Paho.MQTT.Client("mqtt.guardiandelfaro.es", 9001, "clienteWeb");
-        var client = new Paho.MQTT.Client(MQTT_NAME, MQTT_WEBSOCKET_PORT, "clienteWeb");
+        //var client = new Paho.MQTT.Client(MQTT_NAME, MQTT_WEBSOCKET_PORT, "clienteWeb");
+        var client = new Paho.MQTT.Client(MQTT_NAME,Number(MQTT_WEBSOCKET_PORT),"/","clienteWeb_" + Math.random());
         client.connect({
-            useSSL: true,
+            useSSL: false,
             onSuccess: () => {
                 console.log("Conectado WebSocket");
                 document.getElementById("btnEncender1").addEventListener("click", () => {
