@@ -91,36 +91,37 @@ Se instala con:
       sudo apt update
       sudo apt install mosquitto mosquitto-clients
       sudo systemctl enable mosquitto
+      sudo systemctl restart mosquitto
 
 
 Se configura MQTT CON: sudo nano /etc/mosquitto/mosquitto.conf
 
-pid_file /run/mosquitto/mosquitto.pid
+      pid_file /run/mosquitto/mosquitto.pid
 
-#persistence true
-per_listener_settings true
+      #persistence true
+      per_listener_settings true
 
-#include_dir /etc/mosquitto/conf.d
-# Para Wemos (TCP normal)
-listener 1883
-protocol mqtt
-allow_anonymous true
-persistence_location /home/ubuntu/mosquitto/data/
-log_dest file /home/ubuntu/mosquitto/mosquitto.log
-log_type error
-log_type warning
-log_type notice
-log_type information
+      #include_dir /etc/mosquitto/conf.d
+      # Para Wemos (TCP normal)
+      listener 1883
+      protocol mqtt
+      allow_anonymous true
+      persistence_location /home/ubuntu/mosquitto/data/
+      log_dest file /home/ubuntu/mosquitto/mosquitto.log
+      log_type error
+      log_type warning
+      log_type notice
+      log_type information
 
 
-# Para web (WebSockets)
-listener 9001
-protocol websockets
-allow_anonymous true
+      # Para web (WebSockets)
+      listener 9001
+      protocol websockets
+      allow_anonymous true
 
-cafile /etc/mosquitto/certs/fullchain.pem
-certfile /etc/mosquitto/certs/fullchain.pem
-keyfile /etc/mosquitto/certs/privkey.pem
+      cafile /etc/mosquitto/certs/fullchain.pem
+      certfile /etc/mosquitto/certs/fullchain.pem
+      keyfile /etc/mosquitto/certs/privkey.pem
 
 
 
