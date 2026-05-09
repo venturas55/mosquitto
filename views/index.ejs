@@ -504,7 +504,7 @@
         //var client = new Paho.MQTT.Client(MQTT_NAME, MQTT_WEBSOCKET_PORT, "clienteWeb");
         var client = new Paho.MQTT.Client(MQTT_NAME,Number(MQTT_WEBSOCKET_PORT),"/","clienteWeb_" + Math.random());
         client.connect({
-            useSSL: false,
+            useSSL: true,
             onSuccess: () => {
                 console.log("Conectado WebSocket");
                 document.getElementById("btnEncender1").addEventListener("click", () => {
