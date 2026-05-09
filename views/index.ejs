@@ -508,23 +508,16 @@
             onSuccess: () => {
                 console.log("Conectado WebSocket");
                 document.getElementById("btnEncender1").addEventListener("click", () => {
-                    //client.send("wemos/salida1", "ON");
-                    const message = new Paho.MQTT.Message("ON");
-                    message.destinationName = "wemos/salida1";
-                    client.send(message);
+                    client.send("wemos/salida1", "ON");
                     console.log("Enviando encendido 1");
 
                 });
                 document.getElementById("btnApagar1").addEventListener("click", () => {
-                    //client.send("wemos/salida1", "OFF");
-                    const message = new Paho.MQTT.Message("OFF");
-                    message.destinationName = "wemos/salida1";
-                    client.send(message);
-
+                    client.send("wemos/salida1", "OFF");
                     console.log("Enviando apagado 1");
                 });
                 document.getElementById("btnEncender2").addEventListener("click", () => {
-                    //client.send("wemos/salida2", "ON");
+                    client.send("wemos/salida2", "ON");
                     const message = new Paho.MQTT.Message("ON");
                     message.destinationName = "wemos/salida2";
                     client.send(message);
